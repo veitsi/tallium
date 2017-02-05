@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello, ticketer</title>
+</head>
+<body>
+<form action="cashdesk.php" method="get">
+    <button name="set00">Order</button>
+</form>
+<script src="firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyBGvVPKhebSKzOqS5g4A_KGVvaRipkSiRU",
+        authDomain: "tick01-129b4.firebaseapp.com",
+        databaseURL: "https://tick01-129b4.firebaseio.com",
+        storageBucket: "tick01-129b4.appspot.com",
+        messagingSenderId: "64181337677"
+    };
+    firebase.initializeApp(config);
+    console.log('hello, world');
+    dbRef=firebase.database().ref().child('text');
+    dbRef.on('value', function (snap) {
+        console.log('we got '+snap.val());
+    })
+
+</script>
+
+</body>
+</html>
